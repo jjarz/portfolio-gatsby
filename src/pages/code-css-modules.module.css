@@ -1,0 +1,35 @@
+.linkContainer {
+    margin: 2rem 0;
+}
+
+.githubImage {
+    float: left;
+}
+
+.link:hover {
+    color: black;
+}
+
+.linkTitle {
+    margin-left: 1rem;
+    display: inline-block;
+    padding-top: 3px;
+}
+
+.description {
+    max-width: 650px;
+    margin-bottom: 2rem;
+}
+
+.triangles {
+    display: inline-block;
+}
+
+@media (min-width: 980px) {
+    .trianglesDescription {
+        display: inline-block;
+        vertical-align: top;
+        padding: 4.25rem 1rem;
+        max-width: 55%;
+    }
+}

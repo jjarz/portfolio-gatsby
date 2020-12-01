@@ -1,0 +1,21 @@
+.ybLogo {
+    margin-top: 3rem;
+    float: left;
+}
+
+.description {
+    padding: 3rem 0;
+    display: inline-block;
+}
+
+.chicktechDescription {
+    display: inline-block;
+    padding: 4rem 0;
+}
+
+@media (min-width: 600px) {
+    .description, .chicktechDescription {
+        margin-left: 2rem;
+        max-width: 60%;
+    }
+}

@@ -1,0 +1,56 @@
+:root {
+    --coral: #ff6b6b;
+    --teal: #4ecdc4;
+    --darkblue: #4E57CD;
+    --yellow: #ffe66d;
+}
+
+.container {
+    margin: 140px auto;
+}
+
+.design {
+    color: var(--darkblue);
+}
+
+.about {
+    color: var(--teal);
+}
+
+.code {
+    color: var(--coral);
+}
+
+.teach {
+    color: var(--yellow);
+}
+
+@media (min-width: 750px) {
+    .container {
+        margin: 130px auto;
+    }
+    
+    .header {
+        font-size: 100px;
+    }
+    
+    .design:hover {
+        color: var(--darkblue);
+    }
+    
+    .about:hover {
+        color: var(--teal);
+    }
+    
+    .code:hover {
+        color: var(--coral);
+    }
+    
+    .teach:hover {
+        color: var(--yellow);
+    }
+    
+    .design, .about, .code, .teach {
+        color: black;
+    }
+}

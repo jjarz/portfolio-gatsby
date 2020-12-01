@@ -1,0 +1,55 @@
+.container {
+    margin: 1rem;
+}
+
+.ul {
+    list-style: none;
+    line-height: 57px;
+    float: left;
+    margin-left: 0;
+    font-size: 15px;
+}
+
+.li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.header {
+    margin-bottom: 1.5rem;
+}
+
+.links {
+    color: black;
+}
+
+.links:hover {
+    color: #ff6b6b;
+}
+
+.contact {
+    height: 35px;
+    line-height: 30px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+}
+
+.contact:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+.pageHeader {
+    clear: both;
+}
+
+@media (min-width: 425px) {
+    .container {
+        margin: 3rem;
+    }
+
+    .ul {
+        float: right;
+    }
+}
