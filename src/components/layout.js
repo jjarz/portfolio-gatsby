@@ -35,7 +35,7 @@ class Layout extends React.Component {
 
     return (
       <div className={styles.container}>
-        <SEO title="about Julie Jarzemsky" description="designer, coder, teacher" />
+        <SEO title="Julie Jarzemsky" description="designer, coder, teacher" />
 
         <header className={styles.header}>
           <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
