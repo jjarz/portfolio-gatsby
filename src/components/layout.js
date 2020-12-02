@@ -3,6 +3,7 @@ import styles from './container.module.css'
 import { Link } from 'gatsby'
 import svgLogo from "../data/logo.svg"
 import * as typeformEmbed from "@typeform/embed"
+import SEO from "../components/seo"
 
 const ListLink = props => (
   <li className={styles.li}>
@@ -34,6 +35,8 @@ class Layout extends React.Component {
 
     return (
       <div className={styles.container}>
+        <SEO title="about Julie Jarzemsky" description="designer, coder, teacher" />
+
         <header className={styles.header}>
           <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
             <img src={svgLogo} style={{ display: `inline-block`, width: `50px`, margin: `0px`}} alt="logo"/>
