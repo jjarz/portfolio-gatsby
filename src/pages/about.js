@@ -2,14 +2,14 @@ import React from "react";
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
-import styles from "./about-css-modules.module.css"
+import {about, image} from "./about-css-modules.module.css"
 
 export default function About({ data }) {
     return (
         <Layout pageHeader="Hi, I'm Julie">
             <div>
-                <Img className={styles.image} fixed={data.file.childImageSharp.fixed} />
-                <div className={styles.about}>
+                <Img className={image} fixed={data.file.childImageSharp.fixed} />
+                <div className={about}>
                     I’m a designer, coder, and teacher living in Austin, Texas. <br/><br/>
                     I love creative problem-solving, which led me to study computer science at 
                     University of Wisconsin-Madison and work as a software engineer for four years. 

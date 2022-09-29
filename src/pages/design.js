@@ -1,20 +1,20 @@
 import React from "react";
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import styles from "./design-css-modules.module.css"
+import {description, masonry, masonryItem} from "./design-css-modules.module.css"
 import Img from "gatsby-image"
 
 export default function Design({ data }) {
     return (
         <Layout pageHeader="Design Work">
-            <div className={styles.description}>
+            <div className={description}>
                 I have experience with graphic design, magazine layout, logo design, illustration and linoleum block printing.  
                 <br/><br/>See some of my work below or view on my Instagram
                 <a href="https://www.instagram.com/julesjarz/" target="_blank" rel="noreferrer"> @julesjarz</a>
             </div>
-            <div className={styles.masonry}>
+            <div className={masonry}>
                 {data.allFile.edges.map(({ node }, index) => (
-                    <div className={styles.masonryItem}>
+                    <div className={masonryItem}>
                         <Img key={index} fluid={node.childImageSharp.fluid} />
                     </div>
                 ))}

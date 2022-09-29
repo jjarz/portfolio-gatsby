@@ -25,6 +25,12 @@
     color: var(--yellow);
 }
 
+@media (max-width: 480) {
+    .design, .about, .code, .teach {
+        text-decoration: underline;
+    }
+}
+
 @media (min-width: 750px) {
     .container {
         margin: 130px auto;
