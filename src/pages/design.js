@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import {description, masonry, masonryItem} from "./design-css-modules.module.css"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export default function Design({ data }) {
     return (
@@ -15,26 +15,30 @@ export default function Design({ data }) {
             <div className={masonry}>
                 {data.allFile.edges.map(({ node }, index) => (
                     <div className={masonryItem}>
-                        <Img key={index} fluid={node.childImageSharp.fluid} />
+                        <GatsbyImage image={node.childImageSharp.gatsbyImageData} key={index} />
                     </div>
                 ))}
             </div>
         </Layout>
-    )
+    );
 }
 
 export const query = graphql`{
-    allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, relativeDirectory: {eq: "photos"}}) {
-        edges {
-            node {
-            childImageSharp {
-                fluid(maxWidth: 400, quality: 100) {
-                originalName
-                ...GatsbyImageSharpFluid_withWebp
-                }
-            }
-            }
+  allFile(
+    filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, relativeDirectory: {eq: "photos"}}
+  ) {
+    edges {
+      node {
+        childImageSharp {
+          gatsbyImageData(
+            width: 400
+            quality: 100
+            placeholder: BLURRED
+            layout: CONSTRAINED
+          )
         }
+      }
     }
   }
+}
 `

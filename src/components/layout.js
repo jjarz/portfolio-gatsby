@@ -1,13 +1,13 @@
 import React from "react"
-import styles from './container.module.css'
+import {li, links, container, header, ul, contact, pageHeader} from './container.module.css'
 import { Link } from 'gatsby'
 import svgLogo from "../data/logo.svg"
 import * as typeformEmbed from "@typeform/embed"
 import SEO from "../components/seo"
 
 const ListLink = props => (
-  <li className={styles.li}>
-    <Link to={props.to} className={styles.links}>{props.children}</Link>
+  <li className={li}>
+    <Link to={props.to} className={links}>{props.children}</Link>
   </li>
 )
 
@@ -34,23 +34,23 @@ class Layout extends React.Component {
     const children = this.props.children;
 
     return (
-      <div className={styles.container}>
+      <div className={container}>
         <SEO title="Julie Jarzemsky" description="designer, coder, teacher" />
 
-        <header className={styles.header}>
+        <header className={header}>
           <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
             <img src={svgLogo} style={{ display: `inline-block`, width: `50px`, margin: `0px`}} alt="logo"/>
           </Link>
-          <ul className={styles.ul}>
+          <ul className={ul}>
             <ListLink to="/design/">design</ListLink>
             <ListLink to="/code/">code</ListLink>
             <ListLink to="/teach/">teach</ListLink>
             <ListLink to="/about/">about</ListLink>
-            <button id="bt-popup" className={styles.contact}>contact</button>
+            <button id="bt-popup" className={contact}>contact</button>
           </ul>
         </header>
 
-        <h1 className={styles.pageHeader}>{this.props.pageHeader}</h1>
+        <h1 className={pageHeader}>{this.props.pageHeader}</h1>
         
         {children}
 

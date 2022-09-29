@@ -1,10 +1,10 @@
 
 import React from "react"
-import containerStyles from './container.module.css'
+import {container} from './container.module.css'
 
 export default function HomeLayout({ children }) {
   return (
-    <div className={containerStyles.container}>
+    <div className={container}>
       {children}
     </div>
   )

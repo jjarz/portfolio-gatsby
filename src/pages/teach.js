@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby"
 import {ybLogo, description, chicktechDescription} from "./teach-css-modules.module.css"
 
@@ -9,7 +9,7 @@ export default function Teach({ data }) {
         <Layout pageHeader="Teaching">
             <div>
                 <a href="https://www.americanyouthworks.org" target="_blank" rel="noreferrer">
-                    <Img className={ybLogo} fixed={data.ybLogo.childImageSharp.fixed} />
+                    <GatsbyImage image={data.ybLogo.childImageSharp.gatsbyImageData} className={ybLogo} />
                 </a>
 
                 <div className={description}>
@@ -21,7 +21,9 @@ export default function Teach({ data }) {
 
             <div>
                 <a href="https://austin.chicktech.org/" target="_blank" rel="noreferrer">
-                    <Img className={ybLogo} fixed={data.chickTechLogo.childImageSharp.fixed} />
+                    <GatsbyImage
+                        image={data.chickTechLogo.childImageSharp.gatsbyImageData}
+                        className={ybLogo} />
                 </a>
 
                 <div className={chicktechDescription}>
@@ -31,24 +33,19 @@ export default function Teach({ data }) {
                 </div>
             </div>
         </Layout>
-    )
+    );
 }
 
-export const query = graphql`
-    query {
-        ybLogo: file(relativePath: { eq: "teach/mc-round-red-line.png" }) {
-            childImageSharp {
-              fixed(width: 150, height: 150, quality: 100) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-        },
-        chickTechLogo: file(relativePath: { eq: "teach/ChickTech.jpg" }) {
-            childImageSharp {
-              fixed(width: 150, height: 150, quality: 90) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-        }
+export const query = graphql`{
+  ybLogo: file(relativePath: {eq: "teach/mc-round-red-line.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 150, height: 150, quality: 100, layout: FIXED)
     }
+  }
+  chickTechLogo: file(relativePath: {eq: "teach/ChickTech.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(width: 150, height: 150, quality: 90, layout: FIXED)
+    }
+  }
+}
 `
