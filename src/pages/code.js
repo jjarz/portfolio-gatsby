@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout"
-import {linkContainer, githubImage, linkTitle, description, link, triangles, trianglesDescription} from "./code-css-modules.module.css"
+import {linkContainer, githubImage, linkTitle, description, link } from "./code-css-modules.module.css"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
 
